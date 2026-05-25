@@ -1,0 +1,16 @@
+# FRONTEND
+cupcake-frontend/node_modules
+
+# BACKEND
+cupcake-backend/venv
+cupcake-backend/__pycache__
+
+# ENV
+.env
+
+# UPLOADS
+cupcake-backend/uploads
+
+# SYSTEM
+.DS_Store
+Thumbs.db
