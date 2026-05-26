@@ -6,9 +6,18 @@ from flask_mysqldb import MySQL
 
 from routes.product_routes import product_bp
 from routes.auth_routes import auth_bp
+from flask_mail import Mail
+from routes.contact_routes import contact_bp
 
 app = Flask(__name__)
-
+app.config.update(
+    MAIL_SERVER='smtp.gmail.com',
+    MAIL_PORT=587,
+    MAIL_USE_TLS=True,
+    MAIL_USERNAME='chirchircollins9@gmail.com',
+    MAIL_PASSWORD='gcumsvnwtgidsprq'
+)
+mail = Mail(app)
 CORS(app)
 
 # MYSQL CONFIG
@@ -22,6 +31,7 @@ app.config["UPLOAD_FOLDER"] = "uploads"
 
 # MYSQL INIT
 mysql = MySQL(app)
+mail = Mail(app)
 
 # MAKE MYSQL AVAILABLE
 app.mysql = mysql
@@ -29,6 +39,7 @@ app.mysql = mysql
 # REGISTER ROUTES
 app.register_blueprint(product_bp)
 app.register_blueprint(auth_bp)
+app.register_blueprint(contact_bp)
 
 # SERVE IMAGES
 @app.route("/uploads/<filename>")
