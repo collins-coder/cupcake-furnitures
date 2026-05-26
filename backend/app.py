@@ -15,7 +15,7 @@ CORS(app)
 app.config["MYSQL_HOST"] = "localhost"
 app.config["MYSQL_USER"] = "root"
 app.config["MYSQL_PASSWORD"] = "Rugutson-3"
-app.config["MYSQL_DB"] = "cupcake_furnitures"
+app.config["MYSQL_DB"] = "cupcake_db"
 
 # UPLOADS
 app.config["UPLOAD_FOLDER"] = "uploads"
